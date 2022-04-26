@@ -1,14 +1,16 @@
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import React from 'react';
 
-export default Number = ({ number }) => {
+export default Number = ({ id, number, isSelected, onSelected }) => {
   const handlePress = () => {
-    console.info(number);
+    if (!isSelected) {
+      onSelected(id);
+    }
   };
 
   return (
     <TouchableOpacity onPress={handlePress}>
-      <Text style={styles.random}>{number}</Text>
+      <Text style={[styles.random, isSelected && styles.selected]}>{number}</Text>
     </TouchableOpacity>
   )
 };
@@ -21,5 +23,9 @@ const styles = StyleSheet.create({
     marginVertical: 25,
     fontSize: 35,
     textAlign: 'center',
+    minHeight: 45,
+  },
+  selected: {
+    opacity: 0.3,
   },
 });
