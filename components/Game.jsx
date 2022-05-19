@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import React, { useEffect, useState, useRef } from "react";
 import Number from "./Number";
 
-export default Game = ({ randomNumbersCount, initialSeconds }) => {
+const Game = ({ randomNumbersCount, initialSeconds }) => {
   const [ randomNumbers, setRandomNumbers ] = useState([]);
   const [ target, setTarget ] = useState();
   const [ selectedNumbers, setSelectedNumbers ] = useState([]);
@@ -88,3 +88,5 @@ const styles = StyleSheet.create({
     backgroundColor: 'green'
   },
 });
+
+export default Game;
